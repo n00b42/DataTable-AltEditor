@@ -867,7 +867,8 @@
                         $(selector + ' .modal-body').append(message);
                     }
 
-                    this.s.dt.row.add(data).draw(false);
+                    if(data)
+                        this.s.dt.row.add(data).draw(false);
 
                     // Disabling submit button
                     $("div" + selector).find("button#addRowBtn").prop('disabled', true);
@@ -896,7 +897,8 @@
                         $(selector + ' .modal-body').append(message);
                     }
 
-                    this.s.dt.row({selected: true}).data(data);
+                    if(data)
+                        this.s.dt.row({selected: true}).data(data);
                     this.s.dt.draw('page');
 
                     // Disabling submit button
